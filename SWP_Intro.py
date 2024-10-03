@@ -1,6 +1,5 @@
 #
 # Created by Luis Vera
-# Last edited October 1, 2024
 #
 
 import streamlit as st
