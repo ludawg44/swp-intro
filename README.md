@@ -1,5 +1,5 @@
 # STRATEGIC WORKFORCE PLANNING
-**A primer for newbies**
+**A primer for newbies 🚼**
 
 ### What is Strategic Workforce Planning?
 
