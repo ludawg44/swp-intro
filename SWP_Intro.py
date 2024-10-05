@@ -184,3 +184,18 @@ atrit_df = atrit_df[['Year', 'Attrition']]
 atrit_df = atrit_df.set_index('Year')
 atrit_df_transposed = atrit_df.transpose()
 atrit_df_transposed
+
+st.write(
+    """
+    I would agree with you that this is harsh decline in the workforce and has an immediate sticker shock effect. 
+    Any good manager would do anything in their power to stop the decline or snowball effect. 
+    But the decline is yet another reminder of how quickly teams can be unravelled.  
+    \nAnother item I'd like to point out is how unsightly it is to see this visually displayed as a table or line chart.
+    That is why most SWP practitioners would prefer to view this decline along with antipated growth, in a waterfall format. 
+    And for that we turn to the Gap Analysis. 
+    """
+)
+
+# ----- Gap Analysis ----- #
+
+# ----- Waterfall Chart ----- #
