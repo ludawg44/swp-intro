@@ -19,7 +19,7 @@ st.write(
     You have to know how to crawl before you start running.
     We understand there are various strategies, frameworks, and models used in SWP, but we're going to start with the fundamentals. 
     There are three topics we're going to cover in this primer. 
-    The first one is Workforce Demand, followed by Workforce Supply, and lastly the Gap Analysis. 
+    The first one is Workforce Demand, followed by Workforce Supply, and lastly Gap Analysis. 
     It is our hope that with these three fundamental concepts you will achieve a better understanding of how to implement SWP within your organization.
     """
 )
@@ -29,8 +29,8 @@ st.write(
 st.markdown("### Workforce Demand")
 st.write(
     """
-    Workforce Demand can be thought of having two views. One incorporates a high-level perspective with a minimal amount of factors incorporated into the calculation. 
-    The second is an aggregate of the myopic demand for each position or role within an organization or team. We're going to demonstrate both perspective in this section.
+    Workforce Demand can be thought of having two views of the workforce you or your company desires. One incorporates a high-level perspective with a minimal amount of factors incorporated into the calculation (think really busy VPs and Director levels folks).
+    The second is an aggregate of the demand for each position or role within an organization or team (think managers or boots on the ground). We're going to demonstrate both perspective in this section.
     """
 )
 
@@ -40,9 +40,9 @@ st.markdown("##### A Macro Case Study")
 
 st.write(
     """
-    You recently joined a biotech startup that received a new round of funding. 
-    Researchers made new headways in advancing the genetics therapies and the excitement is palpable. 
-    It's planning season and your hiring manager asked to get the latest workforce forecast for the next 5 years.
+    Congratulations, you recently joined a biotech startup specializing in gene-editing technology that received a new round of funding. 
+    Researchers made new headways in advancing the platform and the excitement is palpable both internally and externally the company. 
+    It's workforce planning season and your boss asked to get the latest forecast for the next 5 years.
     Being new to the company, you're going to take the projected business growth and use that as your growth multiplier.
     The most recent analyst reported a 12% growth. 
     You're team is currently at 210. 
@@ -87,10 +87,10 @@ st.markdown("##### A Micro Perspective")
 
 st.write(
     """
-    You hand in your projections to your hiring manager and he believes it looks a little downbeat.
-    Based on this information you decide to turn to your counterparts across the organization. 
+    You hand in your projections to your boss and he believes it looks a little downbeat.
+    Based on this feedback you decide to turn to your subordinates across the organization. 
     You write an email to each department head and describe the ask. 
-    They return with the following:
+    They return with the following numbers:
     """
 )
 
@@ -128,7 +128,7 @@ st.markdown("##### Putting it altogether")
 st.write(
     """
     Now we can compare the difference between a macro and micro workforce demand. 
-    One encapsulating a single growth multipler while the other incorporating more feedback.
+    One encapsulating a single growth multipler while the other incorporating multiple factors.
     """
 )
 
@@ -148,8 +148,8 @@ st.plotly_chart(fig)
 st.write(
     """
     What does this tell us? 
-    Aside from the obvious delta, this shows us that being able to distinguish from a macro to a micro mindset will show differences in our outlook. 
-    Personally, I believe this is why we have so many discrepancies between the higher level managers and those on at the factory floor. 
+    Aside from the obvious delta, this shows us a macro vs. a micro mindset will that will cause differing outlooks. 
+    Personally, I believe this is why we have so many discrepancies between the higher level managers and those on at the metatphorical floor. 
     """
 )
 
@@ -159,9 +159,9 @@ st.markdown("### Workforce Supply")
 st.write(
     """
     The next step in our primer is Workforce Supply. 
-    We are only going to focus on the internal talent supply, specifically developing some understanding of attrition forecasting. 
-    If you were to take this further, you would get into skills, experience, education, and eventually external talent supply. 
-    For that you would need to understand how skills, experience, education, etc. work in external markets now and in the future. 
+    We are only going to focus on the internal talent supply, specifically developing some understanding of how attrition plays a role. 
+    If you were to take this further, you would get into skills, experience, education, and eventually external talent supply datasets. 
+    For that, you would need to understand how skills, experience, and education, etc. work in external markets now and in the future. 
     """
 )
 
@@ -204,6 +204,7 @@ st.write(
     Great, you understand the basic principle, but what does that mean and how are you going to apply it to your plan and the insights you'll be able to provide to your team? 
     The gap, depending you're above or below status quo, will help you put into context how mych surplus or scarcity of your workforce you will have over time. 
     Each concept on it's own has it's own strategy in place that will allow you to help optimize your workforce over time. 
+    \nHere are some ideas on how you can deal with a scarcity or a surplus when analyzing your workforce. 
     
     """
 )
