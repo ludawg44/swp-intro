@@ -197,5 +197,14 @@ st.write(
 )
 
 # ----- Gap Analysis ----- #
-
+st.markdown("### Gap Analysis")
+st.write(
+    """
+    Lastly, we cover the Gap Analysis. In essence, this allows us to have a better understanding of the gap between our demand and our supply. 
+    Great, you understand the basic principle, but what does that mean and how are you going to apply it to your plan and the insights you'll be able to provide to your team? 
+    The gap, depending you're above or below status quo, will help you put into context how mych surplus or scarcity of your workforce you will have over time. 
+    Each concept on it's own has it's own strategy in place that will allow you to help optimize your workforce over time. 
+    
+    """
+)
 # ----- Waterfall Chart ----- #
