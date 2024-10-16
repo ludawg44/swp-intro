@@ -2,11 +2,11 @@
 # Created by Luis Vera
 #
 
-import streamlit as st
+import streamlit as st # type: ignore
 import pandas as pd
 import numpy as np
-import plotly.express as px
-import plotly.graph_objects as go
+import plotly.express as px # type: ignore
+import plotly.graph_objects as go # type: ignore
 import datetime
 import random
 
