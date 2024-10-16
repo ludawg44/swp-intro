@@ -13,10 +13,10 @@ import random
 st.set_page_config(page_title="SWP")
 
 st.markdown("# Strategic Workforce Planning")
-st.markdown("### A Primer")
+# st.markdown("#### A Primer")
 st.write(
     """
-    We are going to keep this Strategic Workforce Planning (SWP) primer relatively straightforward and simple.
+    We're going to keep this Strategic Workforce Planning (SWP) primer relatively straightforward and simple.
     You have to know how to crawl before you start running.
     We understand there are various strategies, frameworks, and models used in SWP, but we're going to start with the fundamentals. 
     There are three topics we're going to cover in this primer. 
@@ -27,7 +27,7 @@ st.write(
 
 # ----- Workforce Demand----- #
 
-st.markdown("### Workforce Demand")
+st.markdown("#### Workforce Demand")
 st.write(
     """
     Workforce Demand can be thought of having two views of the workforce you or your company desires. One incorporates a high-level perspective with a minimal amount of factors incorporated into the calculation (think really busy VPs and Director levels folks).
@@ -37,11 +37,11 @@ st.write(
 
 # ----- Macro Workforce ----- #
 
-st.markdown("##### A Macro Case Study")
+st.markdown("##### A Micro Perspecitve - Case Study 🧬")
 
 st.write(
     """
-    Congratulations, you recently joined a biotech startup specializing in gene-editing technology that received a new round of funding. 
+    You recently joined a biotech startup specializing in gene-editing technology that received a new round of funding. 
     Researchers made new headways in advancing the platform and the excitement is palpable both internally and externally the company. 
     It's workforce planning season and your boss asked to get the latest forecast for the next 5 years.
     Being new to the company, you're going to take the projected business growth and use that as your growth multiplier.
@@ -156,7 +156,7 @@ st.write(
 
 # ----- Workforce Supply----- #
 
-st.markdown("### Workforce Supply")
+st.markdown("#### Workforce Supply")
 st.write(
     """
     The next step in our primer is Workforce Supply. 
@@ -198,7 +198,7 @@ st.write(
 )
 
 # ----- Gap Analysis ----- #
-st.markdown("### Gap Analysis")
+st.markdown("#### Gap Analysis")
 st.write(
     """
     Lastly, we cover the Gap Analysis. In essence, this allows us to have a better understanding of the gap between our demand and our supply. 
