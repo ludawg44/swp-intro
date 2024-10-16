@@ -6,6 +6,7 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 import plotly.express as px
+import plotly.graph_objects as go
 import datetime
 import random
 
@@ -209,3 +210,28 @@ st.write(
     """
 )
 # ----- Waterfall Chart ----- #
+
+workforce
+
+fig = go.Figure(go.Waterfall(
+    name = "20ls", 
+    orientation = "v",
+    measure = ["relative", "relative", "total", "relative", "relative", "total"],
+    x = ["Sales", "Consulting", "Net revenue", "Purchases", "Other expenses", "Profit before tax"],
+    textposition = "outside",
+    text = ["+60", "+80", "", "-40", "-20", "Total"],
+    y = [60, 80, 0, -40, -20, 0],
+    connector = {"line":{"color":"rgb(63, 63, 63)"}},
+))
+
+fig.update_layout(
+        title = "Gap Analysis Waterfall Chart",
+        showlegend = True
+)
+
+
+tab1, tab2 = st.tabs(["Streamlit theme (default)", "Plotly native theme"])
+with tab1:
+    st.plotly_chart(fig, theme="streamlit")
+with tab2:
+    st.plotly_chart(fig, theme=None)
