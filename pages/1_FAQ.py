@@ -17,21 +17,21 @@ st.write("Bleow are a few FAQs that may help you further your understanding of S
 with st.expander("What is SWP?"):
     st.write(
         """
-        Lord help you.
+        There are countless definitions for SWP. From the simple, "Having the right person, at the right time, with the right skillsets," to the multi-graph responses. For me, SWP is a continual optimization exercise that focuses on talent strategies for future growth. 
         """
 )
  
 with st.expander("When should an organization use SWP?"):
     st.write(
         """
-        Pray
+        I want to emphasize on the "continual optimization" part from up above because it is something that needs to be revised, updated, and even revamped. 
         """
 )
     
 with st.expander("Who should use SWP?"):
     st.write(
         """
-        Everyone
+        This one is debatable. There is the camp that thinks it's just for people managers, but I'm on the side of the camp that believes anyone who is trying to understand workforce planning concepts and running their own scenarios, adds value to the organization.
         """
 )
     

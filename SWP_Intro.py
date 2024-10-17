@@ -301,11 +301,11 @@ st.write(
     If you're blanking out on external factors that could effect your talent strategy, I wrote a couple down to get the ball rolling:  \n
     - Global talent challenges
     - Aging population in the labor market
-    - Competition for talent will intensity
+    - Competition for talent will intensify
     - Industry consolidations
-    - Competition for technical/managerial talent
-    - Larger and complex organizations
-    - Shifting organizationl structures
+    - Competition for technical and managerial talent
+    - Navigating through larger and more complex organizations
+    - Shifting organizational structures
     - Availability of skilled workers
     - Tightening labor market
     - Availability and accessibility of technology
@@ -353,4 +353,18 @@ fig.update_layout(
 
 st.plotly_chart(fig)
 
+# ----- Next Steps ----- #
+
 st.markdown("#### Next Steps")
+st.write(
+    """
+    Usually at the end of any SWP tutorial, a practioner would offer guidance on designing a change management plan.
+    They would start by defining the scope, identifying champions, thinking of clever communication slogans and project names.
+    Unfortunately we just scraped the surface. 
+    \nI would ask you to seriously consider the metrics you need to achieve those business goals. 
+    If they don't exist, then work with teams that can help make it happen. 
+    For example, ROI on human capital projects, seem to be absent in almost every organization. 
+    Find a way to make it happen and be diligent on monitoring those metrics. 
+    \nBe on the look out for more primers and tools coming out soon. 
+    """
+)
