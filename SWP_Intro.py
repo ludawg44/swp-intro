@@ -293,11 +293,22 @@ st.info(
 st.markdown("#### Gap Analysis")
 st.write(
     """
-    Lastly, we cover the Gap Analysis. In essence, this allows us to have a better understanding of the gap between our demand and our supply. 
-    Great, you understand the basic principle, but what does that mean and how are you going to apply it to your plan and the insights you'll be able to provide to your team? 
-    The gap, depending you're above or below status quo, will help you put into context how mych surplus or scarcity of your workforce you will have over time. 
-    Each concept on it's own has it's own strategy in place that will allow you to help optimize your workforce over time. 
-    \nHere are some ideas on how you can deal with a scarcity or a surplus when analyzing your workforce. 
+    I would usually congratulate the reader for making it this far, but this is the most complex and challenging part of SWP. 
+    That is because we are revealing the gaps between the various forecasts and it is now time to understand how they implicate your future business goals and objectives.
+    One has to be critical - yet unbiased - when evaluating the bench strength of your existing employees against the strategic needs of the business. 
+    \nAs you dig deeper, you will find it helpful to have your talent strategy near you to rank what gaps need to be addressed.
+    For each area of your talent strategy, consider how well you're prepared to handle the future state and how much impact it will have on your organization or team. 
+    If you're blanking out on external factors that could effect your talent strategy, I wrote a couple down to get the ball rolling:  \n
+    - Global talent challenges
+    - Aging population in the labor market
+    - Competition for talent will intensity
+    - Industry consolidations
+    - Competition for technical/managerial talent
+    - Larger and complex organizations
+    - Shifting organizationl structures
+    - Availability of skilled workers
+    - Tightening labor market
+    - Availability and accessibility of technology
     
     """
 )
@@ -308,8 +319,7 @@ gap_df.drop('Planned Headcount', axis=1,inplace=True)
 gap_df = gap_df.rename(columns={'Forecasted Growth':'Total Headcount Demand','Actual Headcount':'Supply with Hiring'})
 gap_df['Supply without Hiring'] = attrition
 gap_df['Micro Demand Forecast'] = demand_df['Micro WFM'].values
-# gap_df.loc[:,'Micro Demand Forecast'] = demand_df.loc[:,'Micro WFM']
-gap_df
+# gap_df
 
 fig = go.Figure()
 
@@ -342,3 +352,5 @@ fig.update_layout(
 )
 
 st.plotly_chart(fig)
+
+st.markdown("#### Next Steps")
