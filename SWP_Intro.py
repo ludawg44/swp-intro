@@ -37,7 +37,8 @@ st.write(
 
 # ----- Macro Workforce ----- #
 
-st.markdown("##### A Micro Perspecitve - Case Study 🧬")
+st.markdown("##### Case Study Example 🧬")
+st.markdown("##### A Macro Perspecitve")
 
 st.write(
     """
@@ -174,7 +175,7 @@ attrition = []
 wf_start2 = user_wf_start
 attrition.append(wf_start2)
 for i in range(user_lt_yrs-1):
-    value = int(wf_start2)*(1-(int(user_attrition)/100))
+    value = int((wf_start2)*(1-(int(user_attrition)/100)))
     attrition.append(value)
     wf_start2 = value
 
@@ -196,6 +197,77 @@ st.write(
     And for that we turn to the Gap Analysis. 
     """
 )
+# ----- Waterfall Chart ----- #
+
+attrition_w_hc = []
+attrition_factor = 1 - (user_attrition/100)
+wf_start3 = user_wf_start
+attrition_w_hc.append(wf_start3)
+
+for i in range(user_lt_yrs-1):
+    value = int(wf_start3 * attrition_factor)
+    attrition_w_hc.append(value)
+    wf_start3 = value
+
+# attrition_w_hc
+
+waterfall = workforce.copy()
+waterfall = waterfall[['Year','Macro WFM']]
+waterfall = waterfall.rename(columns={'Macro WFM':'Forecasted Growth'})
+waterfall['Planned Headcount'] = user_wf_start
+waterfall = waterfall[['Year', 'Planned Headcount', 'Forecasted Growth']]
+waterfall['Growth'] = waterfall['Forecasted Growth'].subtract(waterfall['Planned Headcount'])
+waterfall['Forecasted Attrition'] = -(waterfall['Forecasted Growth']*float(user_attrition/100))
+waterfall['Forecasted Attrition'] = waterfall['Forecasted Attrition'].astype('int64')
+waterfall['Actual Headcount'] = waterfall['Forecasted Growth'].add(waterfall['Forecasted Attrition'])
+waterfall = waterfall[['Planned Headcount','Forecasted Growth','Growth','Forecasted Attrition','Actual Headcount']]
+waterfall = waterfall[['Planned Headcount','Growth','Forecasted Attrition','Actual Headcount']]
+# waterfall
+
+
+fig = go.Figure(go.Waterfall(
+    name = "Workforce Supply", 
+    orientation = "v",
+    measure = ["relative","relative", "relative", "total"],
+    x = waterfall.columns,
+    textposition = "outside",
+    text = ["Planned Headcount", "Forecasted Growth", "Forecasted Attrition", "Actual Headcount"],
+    y = waterfall.loc[1],
+    connector = {"line":{"color":"rgb(63,63,63)"}}
+))
+fig.update_layout(
+    title = "Workforce Supply Waterfall in 2025",
+    showlegend = True,
+    height = 500
+)
+st.plotly_chart(fig, use_container_width=True)
+
+fig = go.Figure(go.Waterfall(
+    name = "Workforce Supply", 
+    orientation = "v",
+    measure = ["relative","relative", "relative", "total"],
+    x = waterfall.columns,
+    textposition = "outside",
+    text = ["Planned Headcount", "Forecasted Growth", "Forecasted Attrition", "Actual Headcount"],
+    y = waterfall.loc[user_lt_yrs-1],
+    connector = {"line":{"color":"rgb(63,63,63)"}}
+))
+fig.update_layout(
+    title = f"Workforce Supply Waterfall in {int(year)+user_lt_yrs-1}",
+    showlegend = True,
+    height = 500
+)
+st.plotly_chart(fig, use_container_width=True)
+
+st.write("While the main focus is on the delta, we have to remind ourselves that SWP aids in optimizing your future workforce.")
+
+st.info(
+    """At this point you should be thinking what inflows and outflows better reflect your situation. 
+    Is it attrition or is it retirement? 
+    Is the rate of transfers into the organization meeting expeCctations or should you rethinking internal marketing campaigns?
+    These visualizations will help you articulate what is next in the evolution of your workforce. 
+    """
+)
 
 # ----- Gap Analysis ----- #
 st.markdown("#### Gap Analysis")
@@ -209,29 +281,4 @@ st.write(
     
     """
 )
-# ----- Waterfall Chart ----- #
-
-workforce
-
-fig = go.Figure(go.Waterfall(
-    name = "20ls", 
-    orientation = "v",
-    measure = ["relative", "relative", "total", "relative", "relative", "total"],
-    x = ["Sales", "Consulting", "Net revenue", "Purchases", "Other expenses", "Profit before tax"],
-    textposition = "outside",
-    text = ["+60", "+80", "", "-40", "-20", "Total"],
-    y = [60, 80, 0, -40, -20, 0],
-    connector = {"line":{"color":"rgb(63, 63, 63)"}},
-))
-
-fig.update_layout(
-        title = "Gap Analysis Waterfall Chart",
-        showlegend = True
-)
-
-
-tab1, tab2 = st.tabs(["Streamlit theme (default)", "Plotly native theme"])
-with tab1:
-    st.plotly_chart(fig, theme="streamlit")
-with tab2:
-    st.plotly_chart(fig, theme=None)
+# ----- Gap Analysis Visualization ----- #
