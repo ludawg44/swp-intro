@@ -10,7 +10,10 @@ import plotly.graph_objects as go # type: ignore
 import datetime
 import random
 
-st.set_page_config(page_title="SWP")
+st.set_page_config(
+    page_title="SWP",
+    layout='wide'
+)
 
 st.markdown("# Strategic Workforce Planning")
 # st.markdown("#### A Primer")
@@ -37,12 +40,12 @@ st.write(
 
 # ----- Macro Workforce ----- #
 
-st.markdown("##### Case Study Example 🧬")
+st.markdown("##### Case Study Introduction: A CRISPR-based gene editing company 🧬")
 st.markdown("##### A Macro Perspecitve")
 
 st.write(
     """
-    You recently joined a biotech startup specializing in gene-editing technology that received a new round of funding. 
+    You recently joined a biotech startup specializing in gene editing technology that received a new round of funding. 
     Researchers made new headways in advancing the platform and the excitement is palpable both internally and externally the company. 
     It's workforce planning season and your boss asked to get the latest forecast for the next 5 years.
     Being new to the company, you're going to take the projected business growth and use that as your growth multiplier.
@@ -77,11 +80,28 @@ workforce['Year'] = pd.to_datetime(workforce['Year'], format='%Y').dt.strftime('
 workforce['Macro WFM'] = workforce['Macro WFM'].astype('int64')
 # workforce
 
+# Create a CSS style to center the DataFrame
+st.markdown(
+    """
+    <style>
+    .centered-dataframe {
+        display: flex;
+        justify-content: center;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
+
+
 st.write("Your forecast will look like like this:")
 macro_df = workforce.copy()
 macro_df = macro_df.set_index('Year')
 macro_df = macro_df.transpose()
-macro_df
+
+st.markdown('<div class="centered-dataframe">', unsafe_allow_html=True)
+st.dataframe(macro_df)
+st.markdown('</div>', unsafe_allow_html=True)
 
 # ----- Micro Workforce ----- #
 
@@ -220,8 +240,8 @@ waterfall['Growth'] = waterfall['Forecasted Growth'].subtract(waterfall['Planned
 waterfall['Forecasted Attrition'] = -(waterfall['Forecasted Growth']*float(user_attrition/100))
 waterfall['Forecasted Attrition'] = waterfall['Forecasted Attrition'].astype('int64')
 waterfall['Actual Headcount'] = waterfall['Forecasted Growth'].add(waterfall['Forecasted Attrition'])
-waterfall = waterfall[['Planned Headcount','Forecasted Growth','Growth','Forecasted Attrition','Actual Headcount']]
-waterfall = waterfall[['Planned Headcount','Growth','Forecasted Attrition','Actual Headcount']]
+waterfall = waterfall[['Year','Planned Headcount','Forecasted Growth','Growth','Forecasted Attrition','Actual Headcount']]
+waterfall_df = waterfall[['Planned Headcount','Growth','Forecasted Attrition','Actual Headcount']]
 # waterfall
 
 
@@ -229,14 +249,14 @@ fig = go.Figure(go.Waterfall(
     name = "Workforce Supply", 
     orientation = "v",
     measure = ["relative","relative", "relative", "total"],
-    x = waterfall.columns,
+    x = waterfall_df.columns,
     textposition = "outside",
     text = ["Planned Headcount", "Forecasted Growth", "Forecasted Attrition", "Actual Headcount"],
-    y = waterfall.loc[1],
+    y = waterfall_df.loc[1],
     connector = {"line":{"color":"rgb(63,63,63)"}}
 ))
 fig.update_layout(
-    title = "Workforce Supply Waterfall in 2025",
+    title = f"{int(year)+1} Projection",
     showlegend = True,
     height = 500
 )
@@ -246,14 +266,14 @@ fig = go.Figure(go.Waterfall(
     name = "Workforce Supply", 
     orientation = "v",
     measure = ["relative","relative", "relative", "total"],
-    x = waterfall.columns,
+    x = waterfall_df.columns,
     textposition = "outside",
     text = ["Planned Headcount", "Forecasted Growth", "Forecasted Attrition", "Actual Headcount"],
-    y = waterfall.loc[user_lt_yrs-1],
+    y = waterfall_df.loc[user_lt_yrs-1],
     connector = {"line":{"color":"rgb(63,63,63)"}}
 ))
 fig.update_layout(
-    title = f"Workforce Supply Waterfall in {int(year)+user_lt_yrs-1}",
+    title = f"{int(year)+user_lt_yrs-1} Projection",
     showlegend = True,
     height = 500
 )
@@ -282,3 +302,43 @@ st.write(
     """
 )
 # ----- Gap Analysis Visualization ----- #
+
+gap_df = waterfall.copy()
+gap_df.drop('Planned Headcount', axis=1,inplace=True)
+gap_df = gap_df.rename(columns={'Forecasted Growth':'Total Headcount Demand','Actual Headcount':'Supply with Hiring'})
+gap_df['Supply without Hiring'] = attrition
+gap_df['Micro Demand Forecast'] = demand_df['Micro WFM'].values
+# gap_df.loc[:,'Micro Demand Forecast'] = demand_df.loc[:,'Micro WFM']
+gap_df
+
+fig = go.Figure()
+
+fig.add_trace(go.Bar(
+    x=gap_df['Year'],
+    y=gap_df['Supply without Hiring'],
+    name='Supply without Hiring Impact'
+))
+
+fig.add_trace(go.Scatter(
+    x=gap_df['Year'],
+    y=gap_df['Total Headcount Demand'],
+    name='Total Headcount Demand'
+))
+
+fig.add_trace(go.Scatter(
+    x=gap_df['Year'],
+    y=gap_df['Micro Demand Forecast'],
+    name='Micro Demand Forecast'
+))
+
+fig.add_trace(go.Scatter(
+    x=gap_df['Year'],
+    y=gap_df['Supply with Hiring'],
+    name='Supply with Hiring'
+))
+
+fig.update_layout(
+    title_text='Overall Headcount Demand vs Supply'
+)
+
+st.plotly_chart(fig)
