@@ -19,12 +19,7 @@ st.markdown("# Strategic Workforce Planning")
 # st.markdown("#### A Primer")
 st.write(
     """
-    We're going to keep this Strategic Workforce Planning (SWP) primer relatively straightforward and simple.
-    You have to know how to crawl before you start running.
-    We understand there are various strategies, frameworks, and models used in SWP, but we're going to start with the fundamentals. 
-    There are three topics we're going to cover in this primer. 
-    The first one is Workforce Demand, followed by Workforce Supply, and lastly Gap Analysis. 
-    It is our hope that with these three fundamental concepts you will achieve a better understanding of how to implement SWP within your organization.
+    We're going to keep this Strategic Workforce Planning (SWP) primer straightforward and simple. You have to know how to crawl before you can start running. While there are various strategies, frameworks, and models within SWP, we'll begin with the fundamentals. In this primer, we’ll focus on three key topics: Workforce Demand, Workforce Supply, and Gap Analysis. Our goal is that by mastering these foundational concepts, you’ll gain a better understanding of how to effectively implement SWP within your organization.
     """
 )
 
@@ -33,8 +28,7 @@ st.write(
 st.markdown("#### Workforce Demand")
 st.write(
     """
-    Workforce Demand can be thought of having two views of the workforce you or your company desires. One incorporates a high-level perspective with a minimal amount of factors incorporated into the calculation (think really busy VPs and Director levels folks).
-    The second is an aggregate of the demand for each position or role within an organization or team (think managers or boots on the ground). We're going to demonstrate both perspective in this section.
+    Workforce Demand can be viewed from two perspectives. The first takes a high-level approach, incorporating only a few key factors into the calculation—ideal for busy VPs and Directors who need a quick, strategic overview. The second perspective is more detailed, focusing on the demand for each specific position or role within the organization, which is often used by managers or frontline teams. In this section, we’ll demonstrate both approaches to help you understand how Workforce Demand can be analyzed at different levels.
     """
 )
 
@@ -45,13 +39,7 @@ st.markdown("##### A Macro Perspecitve")
 
 st.write(
     """
-    You recently joined a biotech startup specializing in gene editing technology that received a new round of funding. 
-    Researchers made new headways in advancing the platform and the excitement is palpable both internally and externally the company. 
-    It's workforce planning season and your boss asked to get the latest forecast for the next 5 years.
-    Being new to the company, you're going to take the projected business growth and use that as your growth multiplier.
-    The most recent analyst reported a 12% growth. 
-    You're team is currently at 210. 
-    We placed these numbers down below, but feel free to experiment. 
+    You recently joined a biotech startup specializing in gene-editing technology that has just secured a new round of funding. Researchers have made significant advancements in the platform, and the excitement is palpable both within the company and in the broader market. It’s workforce planning season, and your boss has asked for the latest forecast for the next five years. As you're new to the company, you plan to base your projections on the expected business growth, using that as your growth multiplier. The latest analyst report predicts a 12% growth rate. Your team currently consists of 210 people. We've outlined these numbers below, but feel free to experiment with different projections. 
     """
 )
 
@@ -99,9 +87,7 @@ macro_df = workforce.copy()
 macro_df = macro_df.set_index('Year')
 macro_df = macro_df.transpose()
 
-st.markdown('<div class="centered-dataframe">', unsafe_allow_html=True)
 st.dataframe(macro_df)
-st.markdown('</div>', unsafe_allow_html=True)
 
 # ----- Micro Workforce ----- #
 
@@ -109,10 +95,7 @@ st.markdown("##### A Micro Perspective")
 
 st.write(
     """
-    You hand in your projections to your boss and he believes it looks a little downbeat.
-    Based on this feedback you decide to turn to your subordinates across the organization. 
-    You write an email to each department head and describe the ask. 
-    They return with the following numbers:
+    You submit your projections to your boss, but he feels they seem a bit conservative. Based on this feedback, you decide to reach out to your subordinates across the organization for additional input. You send an email to each department head, outlining your request. They respond with the following numbers:
     """
 )
 
