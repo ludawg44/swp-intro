@@ -17,34 +17,34 @@ st.write("Bleow are a few FAQs that may help you further your understanding of S
 with st.expander("What is SWP?"):
     st.write(
         """
-        There are countless definitions for SWP. From the simple, "Having the right person, at the right time, with the right skillsets," to the multi-graph responses. For me, SWP is a continual optimization exercise that focuses on talent strategies for future growth. 
+        SWP, or Strategic Workforce Planning, can be defined in many ways. Some describe it simply as “having the right person, at the right time, with the right skill sets.” Others offer more detailed explanations. For me, SWP is an ongoing optimization process that focuses on aligning talent strategies with future growth needs.
         """
 )
  
 with st.expander("When should an organization use SWP?"):
     st.write(
         """
-        I want to emphasize on the "continual optimization" part from up above because it is something that needs to be revised, updated, and even revamped. 
+        An organization should use Strategic Workforce Planning (SWP) continually. It's not a one-time initiative but an ongoing optimization process that needs to be regularly revised, updated, and even revamped. As business needs, market conditions, and talent landscapes evolve, SWP ensures that the organization remains agile and well-prepared for future growth by constantly realigning talent strategies.
         """
 )
     
 with st.expander("Who should use SWP?"):
     st.write(
         """
-        This one is debatable. There is the camp that thinks it's just for people managers, but I'm on the side of the camp that believes anyone who is trying to understand workforce planning concepts and running their own scenarios, adds value to the organization.
+        This is debatable. Some believe SWP is only for people managers, but I’m in the camp that believes it’s valuable for anyone involved in understanding workforce planning concepts. Whether you’re a manager or not, if you’re running scenarios and analyzing workforce strategies, you’re contributing to the organization’s success. SWP is most effective when embraced across all levels, not just by those in leadership roles.
         """
 )
     
 with st.expander("How does an organization use SWP?"):
     st.write(
         """
-        Pray
+        SWP is both a tool and a practice for those involved in making strategic decisions. It works best when organizations hold regular meetings to review, update, and refine their workforce plan. This continual review process is especially valuable for companies with high-growth plans, as it ensures the organization remains agile and prepared for future talent needs. 
         """
 )
     
 with st.expander("Why would an organization use SWP?"):
     st.write(
         """
-        Pray
+        Today, from start-ups to mature companies, organizations are constantly competing for the best talent strategies. As data and technology continue to transform outdated HR methodologies, staying agile and at the forefront of strategic thinking becomes essential. SWP helps organizations achieve this by enabling them to proactively plan for future talent needs and stay competitive in a rapidly evolving landscape.
         """
 )
